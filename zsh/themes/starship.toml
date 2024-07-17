@@ -1,0 +1,18 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[docker_context]
+disabled = true
+
+# format = '$all$git_branch$character'
+
+format = '''
+$ruby $node
+$directory $git_branch
+$character
+'''
+
+# format = '''
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) '''
