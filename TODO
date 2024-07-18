@@ -1,16 +1,9 @@
-.dotfiles
-rcm???
-
-- n version manager
-- asdf https://asdf-vm.com/guide/getting-started.html
-  - n-uninstall
-  - uninstall frum
-
-https://edgeguides.rubyonrails.org/development_dependencies_install.html
-- ruby
-  - global gems
-    - bundler - http://bundler.io/
-    - benchmark-ips - https://github.com/evanphx/benchmark-ips
+# ADD to brewfile?
+  https://edgeguides.rubyonrails.org/development_dependencies_install.html
+  - ruby
+    - global gems
+      - bundler - http://bundler.io/ - included in ruby, but versions differ
+      - benchmark-ips - https://github.com/evanphx/benchmark-ips
 
 - Rails
   - Active Record depends on (one of)
@@ -29,28 +22,3 @@ https://edgeguides.rubyonrails.org/development_dependencies_install.html
   -  ActiveSupport requirements
     - memcached
     - Redis
-
-
-
-    ----
-    potential contributions
-    EASY if not already done
-    https://github.com/rails/rails/pull/50115
-    https://github.com/rails/rails/pull/50578 (hijack)
-
-    Moderate
-    https://github.com/rails/rails/labels/needs%20backport
-    https://api.rubyonrails.org/classes/ActionDispatch/Cookies.html
-    https://github.com/rails/rails/pull/48582
-
-    https://github.com/rails/rails/issues/42544
-    https://github.com/rails/rails/pull/47861
-    https://github.com/rails/rails/issues/47416
-    MAYBE
-    https://github.com/rails/rails/labels/needs%20work
-    https://github.com/rails/rails/labels/needs%20backport
-    https://github.com/rails/rails/issues/24874
-    https://github.com/rails/rails/issues/24875
-    MAJOR
-    https://github.com/rails/rails/issues/47809
-    https://github.com/Shopify/maintenance_tasks/issues/462
