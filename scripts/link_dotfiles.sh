@@ -6,5 +6,5 @@ FILES=()
 while IFS='' read -r line; do FILES+=("$line"); done < <(ls -A ~/.dotfiles/home)
 
 for filename in "${FILES[@]}"; do
-  ln -s -w "$HOME/.dotfiles/home/$filename" "$HOME/$filename";
+  ln -s -i "$HOME/.dotfiles/home/$filename" "$HOME/$filename";
 done
