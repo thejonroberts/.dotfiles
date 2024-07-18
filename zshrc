@@ -3,7 +3,7 @@
 CONFIG_DIR="$HOME/.dotfiles"
 source "$CONFIG_DIR/zsh/environment.zsh"
 source "$CONFIG_DIR/zsh/aliases.zsh"
-source "$CONFIG_DIR/zsh/functions.zsh"
+source "$CONFIG_DIR/zsh/functions/mcd.zsh"
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
