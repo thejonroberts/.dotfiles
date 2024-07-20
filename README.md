@@ -1,42 +1,63 @@
 # My development environment configuration
 
-My configuration files for my development environments. Inspired by everyone else's dotfiles and especially [thoughtbot's approach](https://github.com/thoughtbot/dotfiles).
+My configuration files for my development environment. Inspired by everyone else's dotfiles and especially [thoughtbot's approach](https://github.com/thoughtbot/dotfiles).[^1] I don't need their entire setup, but the basic approach is the right one: sync .rc files in ~/ with a repo you control via symlinks.
 
-I tried to get thoughtbot's `rcm` to work for me, but ran into some issues.[^1] But their approach is the right one: sync .rc files in ~/ with a repo you control via symlinks.
+## Included
+
+### Zsh configuration
+
+I loved [oh my zsh](https://ohmyz.sh), but wanted to keep things light and try rolling my own setup. It includes:
+
+- Plugins: [autojump](https://github.com/wting/autojump), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search), [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- various [aliases](zsh/aliases.zsh) and a few [functions](zsh/functions) with completions
+- [starship prompt](https://starship.rs/) & export of my terminal theme[^2]:
+
+| Dark  | Light |
+| ------------- | ------------- |
+| ![image](images/terminal-github-dark.png)  | ![image](images/terminal-github-light.png)  |
+
+This setup could be more optimized - zsh is complex, and I'm no expert. I will try to get some time for it, but it works, it works fast, and I want to build other things at the moment.
 
 ## Installation
 
-This was not meant to be installed by others, but you can go for it. Currently `~/.dotfiles/home/` is hard-coded. You can modify the scripts to use your preferred directory - they are not complicated (And thank you [shellcheck](https://github.com/koalaman/shellcheck#in-your-editor)). You can safely move a git directory to `~/.dotfiles/` with (trailing slash is important):
+This was not meant to be installed by others, but take it and modify as you like. Currently, it is hardcoded to copy and link files from `~/` to `~/.dotfiles/home/`. If you already have a config directory setup, you can:
 
-```sh
- cp -RL path/to/folder/ ~.dotfiles
- rm -rf path/to/folder
-```
+- modify the `/scripts` to use your preferred directory
+- OR safely move a git directory with:
 
-### Adding a new dotfile
+  ```sh
+  cp -RL path/to/folder/ ~.dotfiles # trailing slash is important
+  rm -rf path/to/folder
+  ```
 
-You have installed a new thing that uses `.somerc` file. Make sure it is not already a symlink. Make sure you have a target directory (~/.dotfiles/home). Add it to the repo with:
+### Bundle the Brewfile
 
-```sh
-scripts/home_to_dotfiles.sh .somerc
-```
-
-This moves the file(s) and symlinks them. It accepts multiple files (space separated).
-
-### Symlinking your dotfiles
-
-You have a new machine, or want to make sure things are in sync:
-
-```sh
-scripts/link_dotfiles.sh
-```
-
-### Brewfile
-
-Sets up homebrew'd packages.
+Installs all packages/plugins.
 
 ```sh
 brew bundle
 ```
 
-[^1]: In particular, I wanted to keep the root directory clean and store files in a `./home/` directory (as rc files are in `~/`). I could not get the .rcrc DOTFILES_DIRS environment variable to work for all of the operations.
+### Tracking a new configuration file
+
+You have an untracked `.somerc` file that you want to bring into your configs.
+
+```sh
+scripts/home_to_dotfiles.sh .somerc
+```
+
+This moves the file(s) to `~/.dotfiles/home/` and symlinks to them from `~/`. It accepts multiple files (space-separated).
+
+### Symlinking your files
+
+You have a new machine, or want to make sure things are sync'd up:
+
+```sh
+scripts/link_dotfiles.sh
+```
+
+This will create a symlink in `~/` for any files in `~/.dotfiles/home/`.
+
+[^1]: I tried to get thoughtbot's `rcm` to work for me without cloning their repo, but ran into some issues. In particular, I wanted to keep the repo root directory clean and store files in a `home/` directory (as rc files are in `~/`). I could not get the .rcrc DOTFILES_DIRS environment variable to work for all of the operations.
+
+[^2]: You can grab a vscode theme's ansi colors by running "Developer: Generate Color Theme From Current Settings" from the command palette (`terminal.ansi.[ansiColor]` settings).
