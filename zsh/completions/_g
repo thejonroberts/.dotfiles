@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# allows `g` to be used with `git` completions
+# compdef g
+compdef g=git

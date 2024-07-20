@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 # User configuration
-DEFAULT_USER=`whoami`
+DEFAULT_USER=$(whoami)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -27,7 +29,8 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 # NOTE: had to set these for psych / libyaml issue with frum
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
-export RUBY_CONFIG_OPTIONS=--with-openssl-dir="$(brew --prefix openssl@3)"
+RUBY_CONFIG_OPTIONS="--with-openssl-dir=$(brew --prefix openssl@3)"
+export RUBY_CONFIG_OPTIONS
 eval "$(frum init)"
 
 # vscode / ruby debug
