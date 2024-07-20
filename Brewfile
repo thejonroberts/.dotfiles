@@ -13,16 +13,22 @@ tap "homebrew/services"
 # system
 brew "libyaml"
 brew "openssl"
+
 # database
 brew "redis", restart_service: true
 brew "sqlite"
+
 # version management
 # NOTE: might try asdf next time
 brew "frum"
 brew "n"
+
 # zsh shell
 brew "autojump"
 brew "starship"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "zsh-history-substring-search"
+
+# ide
+brew "shellcheck"
