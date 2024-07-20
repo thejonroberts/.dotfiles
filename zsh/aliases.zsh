@@ -25,6 +25,10 @@ alias gd='git diff'
 # Homebrew
 alias brewup="brew update && brew upgrade && brew cleanup"
 
+# Ruby
+alias frumi='frum install --open-ssl-dir="$(brew --prefix openssl@3)"'
+alias frumposti='gem update --system && gem install benchmark-ips'
+
 # Bundler
 alias b="bundle"
 
