@@ -1,1 +1,2 @@
---no-document
+install: --no-document
+:update_sources: true
