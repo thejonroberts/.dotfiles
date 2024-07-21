@@ -10,7 +10,7 @@ I loved [oh my zsh](https://ohmyz.sh), but wanted to keep things light and try r
 
 - Plugins: [autojump](https://github.com/wting/autojump), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search), [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - various [aliases](zsh/aliases.zsh) and a few [functions](zsh/functions) with completions
-- [starship prompt](https://starship.rs/) & export of my terminal theme[^2]:
+- [starship prompt](https://starship.rs/) & export of my terminal theme (based on Github Dark/Light vscode themes)[^2]:
 
 | Dark  | Light |
 | ------------- | ------------- |
@@ -26,9 +26,12 @@ This was not meant to be installed by others, but take it and modify as you like
 - OR safely move a git directory with:
 
   ```sh
-  cp -RL path/to/folder/ ~.dotfiles # trailing slash is important
-  rm -rf path/to/folder
+  # trailing slash is important
+  cp -RL path/to/directory/ ~.dotfiles
+  rm -rf path/to/directory
   ```
+
+I also recommend installing an updated version of bash: `brew install bash`. Otherwise, you may run into issues with the scripts and/or shebangs in them.
 
 ### Bundle the Brewfile
 

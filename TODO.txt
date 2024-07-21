@@ -1,28 +1,12 @@
 # ZSH things
-- show actual command when an alias is used
-  - maybe https://dev.to/equiman/reveal-the-command-behind-an-alias-with-zsh-4d96
 - https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file
   try out fzf tab
 
+- environment variable in aliases.zsh should be in environment?
+  - aliases loaded after environment
+- post install hook for frum install
+- post install hook for n install
+
 scripts:
 - directory arguments
-- force vs interactive/warn... optional arg?
-
 # https://sharats.me/posts/shell-script-best-practices/
-set -o errexit
-# So that when a command fails, bash exits instead of continuing with the rest of the script.
-set -o nounset
-# Fail when accessing an unset variable. use "${VARNAME-}" instead of "$VARNAME".
-set -o pipefail
-# Pipeline command is treated as failed if one command in the pipeline fails
-if [[ "${TRACE-0}" == "1" ]]; then set -o xtrace; fi
-# TRACE=1 ./script.sh for debug mode.
-
-# Accept multiple ways that users can ask for help and respond in kind.
-
-# Check if the first arg is -h or --help or help or just h or even -help, and in all these cases, print help text and exit.
-# Please. For the sake of your future-self.
-
-# When printing error messages, please redirect to stderr.
-
-# Use echo 'Something unexpected happened' >&2 for this.

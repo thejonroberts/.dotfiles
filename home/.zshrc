@@ -46,6 +46,11 @@ for ZSH_FILE in "$CONFIG_DIR/completions"/*(N); do
   source "${ZSH_FILE}"
 done
 
+# case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# expand aliases (tab or ^Xa)
+zstyle ':completion:*' completer _expand_alias _complete _ignored
+
 eval "$(starship init zsh)"
 
 # I have had problemss with [] in rspec before

@@ -14,6 +14,14 @@
 #   $ until-fail ruby -e "rand(0..1) == 1 ? (puts 'failed'; exit(1)) : (puts 'success')"
 #   # Fails randomly and breaks out of the retry loop when it fails
 
+# NOTE: to use a debugger with this script
+  # begin
+  #   test_something_that_fails_inconsistently
+  # rescue Exception => e
+  #   binding.b
+  #   raise e # Reraise the failure so the retry script stops
+  # end
+
 if [[ -z "$*" ]]; then
   echo "ERROR: No command given to retry"
   exit 1 # Error status
