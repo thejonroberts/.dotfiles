@@ -23,6 +23,7 @@
 # Logs and databases #
 ######################
 *.log
+**/.byebug_history
 
 *.sqlite
 *.sqlite-journal
