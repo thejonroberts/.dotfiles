@@ -12,8 +12,8 @@ DEFAULT_USER=$(whoami)
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='code'
-  export VISUAL="code"
+  export EDITOR='code --wait'
+  export VISUAL="code --wait"
 fi
 
 # Compilation flags
@@ -29,6 +29,8 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 # NOTE: had to set these for psych / libyaml issue with frum
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/opt/openssl@3/lib/"
 RUBY_CONFIG_OPTIONS="--with-openssl-dir=$(brew --prefix openssl@3)"
 export RUBY_CONFIG_OPTIONS
 eval "$(frum init)"
