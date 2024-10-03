@@ -7,7 +7,6 @@ HOMEBREW_BUNDLE_NO_LOCK=1
 
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 
 # system
@@ -19,7 +18,6 @@ brew "redis", restart_service: true
 brew "sqlite"
 
 # version management
-# NOTE: might try asdf next time
 brew "frum"
 brew "n"
 

@@ -5,7 +5,7 @@
 [credential]
 	helper = store
 [init]
-  defaultBranch = main
+	defaultBranch = main
 	# https://git-scm.com/docs/git-init#_template_directory
 	# copy any file that does not start with a dot (.) from the template directory
   # templatedir = ~/.git_template
@@ -47,10 +47,14 @@
 [diff]
 	algorithm = histogram
   colorMoved = zebra
+[fetch]
+	prune = true
 [merge]
 	conflictstyle = zdiff3
 	tool = meld
 	ff = only
+[rebase]
+	autosquash = true
 [color]
 	ui = auto
 [color "branch"]

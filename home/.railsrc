@@ -1,0 +1,5 @@
+--edge
+--asset-pipeline=propshaft
+--devcontainer
+# --javascript=esbuild
+# --css=sass

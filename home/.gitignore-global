@@ -55,4 +55,10 @@ Thumbs.db
 /**/.env
 .env
 
+# Local Development #
+####################
 
+MYTODO.txt
+MY_TODO.txt
+MY_NOTES.md
+.rspec-local
