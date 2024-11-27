@@ -1,12 +1,13 @@
-# ZSH things
-- https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file
-  try out fzf tab
-
-- environment variable in aliases.zsh should be in environment?
-  - aliases loaded after environment
-- post install hook for frum install
-- post install hook for n install
+- use .config directory for dotfiles that will use it!
+  - railsrc, git configs?
 
 scripts:
 - directory arguments
 # https://sharats.me/posts/shell-script-best-practices/
+
+- check go & rust versions are working with mise
+
+- sanity check:
+  - show dotfiles that are in home/config but not in this repo & vice versa
+
+- use ruby instead of the bash scripts?

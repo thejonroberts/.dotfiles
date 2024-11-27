@@ -16,10 +16,16 @@ brew "openssl"
 # database
 brew "redis", restart_service: true
 brew "sqlite"
+brew "mysql"
+brew "memcached"
+
+# active storage
+brew "vips"
+brew "ffmpeg"
+brew "mupdf"
 
 # version management
-brew "frum"
-brew "n"
+brew "mise"
 
 # zsh shell
 brew "autojump"
@@ -30,3 +36,4 @@ brew "zsh-history-substring-search"
 
 # ide
 brew "shellcheck"
+brew "yamllint"

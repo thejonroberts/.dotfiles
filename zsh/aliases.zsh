@@ -43,6 +43,7 @@ alias frumposti='gem update --system && gem install benchmark-ips'
 
 # Bundler
 alias b="bundle"
+alias be="bundle exec"
 
 # Rails
 alias migrate="bin/rails db:migrate db:rollback && bin/rails db:migrate db:test:prepare"

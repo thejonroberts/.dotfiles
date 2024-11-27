@@ -1,0 +1,9 @@
+[tools]
+node = { version = 'lts', postinstall = 'corepack enable' }
+ruby = { version = "3.3.6", postinstall = "gem update --system" }
+
+[settings]
+# plugins can read the versions files used by other version managers (if enabled by the plugin)
+# for example, .nvmrc in the case of node's nvm
+legacy_version_file = true
+not_found_auto_install = true # see MISE_NOT_FOUND_AUTO_INSTALL

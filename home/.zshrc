@@ -56,6 +56,6 @@ zstyle ':completion:*' completer _expand_alias _complete _ignored
 
 eval "$(starship init zsh)"
 
-# I have had problemss with [] in rspec before
+# I have had problems with [] in rspec before
 # # Allow [ or ] whereever you want
 # unsetopt nomatch

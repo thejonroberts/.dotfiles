@@ -1,2 +1,4 @@
-install: --no-document
+---
 :update_sources: true
+install: --no-rdoc --no-ri
+update: --no-rdoc --no-ri

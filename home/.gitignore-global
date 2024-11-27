@@ -57,8 +57,9 @@ Thumbs.db
 
 # Local Development #
 ####################
+# my own little directory for notes/todos
+/jon/**
 
-MYTODO.txt
-MY_TODO.txt
-MY_NOTES.md
+# .local config files
+mise.local.toml
 .rspec-local

@@ -1,0 +1,7 @@
+# default global gems for new ruby version installations
+benchmark-ips
+flog
+htmlbeautifier
+reek
+ruby-lsp-rspec
+ruby-lsp-reek

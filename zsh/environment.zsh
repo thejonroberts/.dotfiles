@@ -2,6 +2,7 @@
 
 # User configuration
 DEFAULT_USER=$(whoami)
+export DEFAULT_USER
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -22,21 +23,23 @@ fi
 # HOMEBREW
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# N NODE VERSION MANAGEMENT
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# MISE https://mise.jdx.dev
+# zsh completions have been installed to:
+#   /opt/homebrew/share/zsh/site-functions
+# eval "$(mise activate zsh)"
+# eval "$(mise hook-env -s zsh)"
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  eval "$(/opt/homebrew/bin/mise activate zsh --shims)"
+else
+  eval "$(/opt/homebrew/bin/mise activate zsh)"
+fi
 
-# FRUM
-# NOTE: had to set these for psych / libyaml issue with frum
-export CPATH=/opt/homebrew/include
-export LIBRARY_PATH=/opt/homebrew/lib
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
-export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/opt/openssl@3/lib/"
-RUBY_CONFIG_OPTIONS="--with-openssl-dir=$(brew --prefix openssl@3)"
-export RUBY_CONFIG_OPTIONS
-eval "$(frum init)"
+# RUST
+export PATH="$HOME/.cargo/env:$PATH"
 
-# vscode / ruby debug
-export RUBYOPT="-r /Users/jon/.frum/versions/3.3.3/lib/ruby/gems/3.3.0/gems/debug-1.9.2/lib/debug/prelude.rb ${RUBYOPT}"
+# RUBY
+RUBY_CONFIG_OPTS="--enable-yjit --with-openssl-dir=$(brew --prefix openssl) --with-libyaml-dir=$(brew --prefix libyaml) --with-readline-dir=$(brew --prefix readline)"
+export RUBY_CONFIG_OPTS
 
 # PostGreSQL path
 export PATH="$PATH":/Applications/Postgres.app/Contents/Versions/latest/bin
