@@ -11,3 +11,7 @@ scripts:
   - show dotfiles that are in home/config but not in this repo & vice versa
 
 - use ruby instead of the bash scripts?
+
+- move RUBY_OPTS from .zshrc to .config/mise/config.toml?
+
+- rubocop config?

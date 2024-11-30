@@ -10,6 +10,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 
 # system
+brew "bash"
 brew "libyaml"
 brew "openssl"
 
