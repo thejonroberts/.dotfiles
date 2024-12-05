@@ -14,4 +14,6 @@ scripts:
 
 - move RUBY_OPTS from .zshrc to .config/mise/config.toml?
 
-- rubocop config?
+- rubocop config? obsession?
+
+- https://www.taniarascia.com/setting-up-a-brand-new-mac-for-development/

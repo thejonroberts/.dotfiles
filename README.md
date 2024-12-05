@@ -2,10 +2,6 @@
 
 My configuration files for my development environment. Inspired by everyone else's dotfiles and especially [thoughtbot's approach](https://github.com/thoughtbot/dotfiles).[^1] I don't need their entire setup, but the basic approach is the right one: sync .rc files in ~/ with a repo you control via symlinks.
 
-## Prerequisites
-
-- Install [Homebrew](https://brew.sh/)
-
 ## Included
 
 ### Zsh configuration
@@ -36,6 +32,11 @@ This setup could be more optimized - zsh is complex, and I'm no expert. I will t
 ### Dotfiles
 
 Various dotfiles are in [`home/`](home/) and [`config/`](config/).
+
+## Prerequisites
+
+- Git - see [Homebrew's instructions](https://docs.brew.sh/Installation#macos-requirements)
+- [Homebrew](https://brew.sh/)
 
 ## Installation
 
@@ -77,11 +78,7 @@ To create symlinks for the files in `/config/` (with same directory structure), 
 scripts/link_dot_config_files.sh
 ```
 
-### Things I haven't been able to automate (yet)
-
-- [Maccy Clipboard Manager](https://maccy.app/) One copied item is simply not enough.
-
-#### Footnotes
+### Footnotes
 
 [^1]: I tried to get thoughtbot's `rcm` to work for me without cloning their repo, but ran into some issues. In particular, I wanted to keep the repo root directory clean and store files in a `home/` directory (as rc files are in `~/`). I could not get the .rcrc DOTFILES_DIRS environment variable to work for all of the operations.
 
