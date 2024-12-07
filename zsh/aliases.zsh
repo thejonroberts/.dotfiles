@@ -32,14 +32,12 @@ alias h='history -10' # last 10 history commands
 alias hg='history | grep ' # +command
 alias ag='alias | grep ' # +command
 alias path='echo $PATH | tr -s ":" "\n"' # Pretty print the path
-alias zshconfig='code ~/.dotfiles'
+alias dotfiles='code ~/.dotfiles'
 
 # Homebrew
 alias brewup="brew update && brew upgrade && brew cleanup"
 
 # Ruby
-alias frumi='frum install --open-ssl-dir="$(brew --prefix openssl@3)"'
-alias frumposti='gem update --system && gem install benchmark-ips'
 
 # Bundler
 alias b="bundle"
@@ -47,7 +45,7 @@ alias be="bundle exec"
 
 # Rails
 alias migrate="bin/rails db:migrate db:rollback && bin/rails db:migrate db:test:prepare"
-alias s="rspec"
+alias s="bin/rspec"
 alias t="bin/rails test"
 TEST_OPTS=(--defer-output --show-skips --warnings --pride)
 alias rt='bin/rails test $TEST_OPTS'
